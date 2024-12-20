@@ -10,7 +10,8 @@ for i in range(0,252):
 
 numbers = list(range(1, 253))
 
+plt.figure(figsize=(15,10), dpi=200)
 plt.plot(numbers, appleprices)
-plt.title("Apple Stock Price, Nov 2019 to Nov 2020")
-plt.xlabel("Day")
-plt.ylabel("Trading Price")
+plt.title("Apple Stock Price, Nov 2019 to Nov 2020", fontsize = 20)
+plt.xlabel("Day", fontsize = 15)
+plt.ylabel("Trading Price", fontsize = 15)
