@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+f = open("/Users/surajrajiv/Downloads/sample_AAPL.txt", "r")
+listItems = f.read().splitlines()
+appleprices=listItems
+
+for i in range(0,252):
+    appleprices[i] = float(listItems[i])
+
+numbers = list(range(1, 253))
+
+plt.plot(numbers, appleprices)
+plt.title("Apple Stock Price, Nov 2019 to Nov 2020")
+plt.xlabel("Day")
+plt.ylabel("Trading Price")

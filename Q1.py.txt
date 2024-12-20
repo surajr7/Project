@@ -1,0 +1,15 @@
+import numpy as np
+
+f = open("/Users/surajrajiv/Downloads/sample_AAPL.txt", "r")
+listItems = f.read().splitlines()
+appleprices=listItems
+
+for i in range(0,252):
+    appleprices[i] = float(listItems[i])
+
+appleprices = np.array(appleprices)
+
+mean = np.mean(appleprices)
+std_dev = np.std(appleprices)
+
+print("The mean price is $ " + str(round(mean,2)) + " and the standard deviation is $" + str(round(std_dev,2)))

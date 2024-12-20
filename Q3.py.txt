@@ -1,0 +1,28 @@
+import numpy as np
+
+f = open("/Users/surajrajiv/Downloads/sample_AAPL.txt", "r")
+listItems = f.read().splitlines()
+appleprices=listItems
+
+for i in range(0,252):
+    appleprices[i] = float(listItems[i])
+
+current_max_val = 0
+max_profit_val = 0
+potential_profit= 0
+day= 252
+sell_day = 0
+buy_day = 0
+
+for price in reversed(appleprices):
+ current_max_val = max(current_max_val, price)
+ potential_profit = current_max_val - price
+ max_profit_val = max(potential_profit, max_profit_val)
+ if current_max_val == price:
+    sell_day = day
+ if  max_profit_val == potential_profit:
+    buy_day = day
+ day -= 1
+
+ 
+print("The maximum profit is $" + str(round(max_profit_val,2)) + " if you buy on day #" + str(buy_day) +" and sell on day #" + str(sell_day))
