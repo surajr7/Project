@@ -12,4 +12,4 @@ appleprices = np.array(appleprices)
 mean = np.mean(appleprices)
 std_dev = np.std(appleprices)
 
-print("The mean price is $ " + str(round(mean,2)) + " and the standard deviation is $" + str(round(std_dev,2)))
+print("The mean price is $" + str(round(mean,2)) + " and the standard deviation is $" + str(round(std_dev,2)))
